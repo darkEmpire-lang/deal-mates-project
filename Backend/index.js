@@ -7,6 +7,48 @@ const bodyParser = require('body-parser');
 // Initialize Express app
 const app = express();
 
+
+
+const allowedOrigins = [
+  'https://deal-mates-admin.vercel.app', 
+  'https://deal-mates-online-store.vercel.app'
+
+];
+
+
+
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin (e.g., mobile apps, CURL)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('The CORS policy for this site does not allow access from the specified origin.'));
+      }
+    }
+  })
+);
+
+
+
+// Set up Helmet for Content Security Policy
+app.use(
+  helmet.contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+      "script-src": ["'self'", "https://vercel.live"], // Allow scripts from vercel.live
+      "default-src": ["'self'"],
+    },
+  })
+);
+
+
+
+app.use(express.json()); // JSON parser middleware
+
 // Middleware
 app.use(cors()); // Allow all origins. Adjust for production.
 app.use(bodyParser.json()); // Parse JSON bodies

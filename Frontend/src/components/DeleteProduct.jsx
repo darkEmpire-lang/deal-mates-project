@@ -3,7 +3,7 @@ import React from 'react';
 const DeleteProduct = ({ productId, onClose }) => {
   const handleDeleteProduct = async () => {
     try {
-      await fetch(`http://localhost:8000/products/delete/${productId}`, {
+      await fetch(`https://deal-mates-project-backend.vercel.app/products/delete/${productId}`, {
         method: 'DELETE',
       });
       alert('Product deleted successfully');

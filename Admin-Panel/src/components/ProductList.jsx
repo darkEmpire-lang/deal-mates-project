@@ -19,7 +19,7 @@ const ProductList = () => {
   // Function to fetch products from the backend
   const fetchProducts = async () => {
     try {
-      const response = await fetch('http://localhost:8000/products'); // Update this URL if needed
+      const response = await fetch('https://deal-mates-project-backend.vercel.app/products'); // Update this URL if needed
       const data = await response.json();
       setProducts(data);
     } catch (error) {
