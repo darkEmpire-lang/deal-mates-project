@@ -217,105 +217,78 @@ const Home = () => {
 
       {/* Product Grid */}
       <div className="container">
-            <div className="row">
-              {filteredProducts.map((product) => (
-            <div
-        key={product._id}
-        className="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 d-flex justify-content-center"
-          >
-        <div
-          className="card product-card shadow-sm border-0"
-          style={{
-            maxWidth: "220px",
-            borderRadius: "10px",
-            overflow: "hidden",
-           
-          }}
-        >
-          <img
-            src={product.imageUrl}
-            alt={product.name}
-            className="card-img-top"
-            style={{
-              height: "150px",
-              objectFit: "cover",
-            }}
-          />
-          <div className="card-body p-2">
-            <h6
-              className="card-title"
-              style={{
-                fontSize: "0.9rem",
-                fontWeight: "bold",
-                whiteSpace: "nowrap",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-              }}
-            >
-              {product.name}
-            </h6>
-            <p
-              className="card-text text-muted"
-              style={{
-                fontSize: "0.8rem",
-              }}
-            >
-              {product.description.length > 60
-                ? product.description.slice(0, 60) + "..."
-                : product.description}
-            </p>
-            <p
-              className="card-text text-primary fw-bold mb-2"
-              style={{ fontSize: "0.9rem" }}
-            >
-              Rs {product.price}
-            </p>
-            <div className="d-flex gap-2">
-  <a
-    href={product.darazLink}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="btn w-50"
-    style={{
-      backgroundColor: "#5A9", // Soothing green shade
-      color: "#fff", // White text for contrast
-      fontSize: "0.85rem", // Slightly smaller font for compactness
-      height: "36px", // Reduced height
-      borderRadius: "6px", // Smooth edges for a modern look
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    }}
-  >
-    <FaShoppingCart className="me-1" />
-    Buy
-  </a>
-  <button
-    className="btn w-50"
-    style={{
-      backgroundColor: "#F8A", // Soft pink shade
-      color: "#fff", // White text for readability
-      fontSize: "0.85rem",
-      height: "36px",
-      borderRadius: "6px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    }}
-    onClick={() => handleShareClick(product.darazLink)}
-  >
-    <FaShareAlt className="me-1" />
-    Share
-  </button>
-</div>
-
-          </div>
+        <div className="row">
+          {filteredProducts.map((product) => (
+            <div key={product._id} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+              <div className="card product-card shadow-sm rounded-lg overflow-hidden">
+                <img
+                  src={product.imageUrl}
+                  alt={product.name}
+                  className="card-img-top"
+                  style={{
+                    height: '220px',
+                    objectFit: 'cover',
+                    borderTopLeftRadius: '8px',
+                    borderTopRightRadius: '8px',
+                  }}
+                />
+                <div className="card-body p-3">
+                  <h6 className="card-title" style={{
+                    fontSize: '1rem', 
+                    fontWeight: 'bold', 
+                    textOverflow: 'ellipsis', 
+                    whiteSpace: 'nowrap', 
+                    overflow: 'hidden', 
+                    maxWidth: '100%'
+                  }}>
+                    {product.name}
+                  </h6>
+                  <p className="card-text" style={{ fontSize: '0.9rem', color: '#666' }}>
+                    {product.description.length > 100 ? product.description.slice(0, 100) + '...' : product.description}
+                  </p>
+                  <div className="d-flex justify-content-between align-items-center mb-3">
+                    <p className="card-text" style={{ fontWeight: 'bold', fontSize: '1rem' }}>
+                      Rs {product.price}
+                    </p>
+                  </div>
+                  <div className="d-flex gap-2 justify-content-between">
+                    <a
+                      href={product.darazLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-primary w-50 d-flex align-items-center justify-content-center text-center gap-2"
+                      style={{
+                        fontSize: '0.9rem',
+                        borderRadius: '8px',
+                        backgroundColor: '#ff8c00',
+                        color: '#fff',
+                        whiteSpace: 'nowrap',  // Prevents text wrapping
+                        padding: '8px 10px',  
+                      }}
+                    >
+                      Buy 
+                    </a>
+                    <button
+                      className="btn btn-secondary w-50 d-flex align-items-center justify-content-center text-center gap-2"
+                      style={{
+                        fontSize: '0.9rem',
+                        borderRadius: '8px',
+                        backgroundColor: '#333',
+                        color: '#fff',
+                        whiteSpace: 'nowrap',  // Prevents text wrapping
+                        padding: '8px 10px',  
+                      }}
+                      onClick={() => handleShareClick(product.shareLink)}
+                    >
+                      Share
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    ))}
-  </div>
-</div>
-
 
       {/* Share Modal */}
       {showShareModal && (

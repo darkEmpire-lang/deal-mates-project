@@ -148,7 +148,7 @@ const Home = () => {
                   alt={product.name}
                   className="card-img-top"
                   style={{
-                    height: '300px',
+                    height: '220px',
                     objectFit: 'cover',
                     borderTopLeftRadius: '8px',
                     borderTopRightRadius: '8px',
@@ -171,19 +171,37 @@ const Home = () => {
                   <div className="d-flex justify-content-between align-items-center mb-3">
                     <p className="card-text" style={{ fontWeight: 'bold', fontSize: '1rem' }}>
                       Rs {product.price}
-                   
-                      </p>
-                    </div>
-                  <div className="d-flex gap-2">
-                    <a href={product.darazLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary w-50 d-flex align-items-center justify-content-center">
-                      <FaShoppingCart className="mr-2" />
-                      Buy Now
+                    </p>
+                  </div>
+                  <div className="d-flex gap-2 justify-content-between">
+                    <a
+                      href={product.darazLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-primary w-50 d-flex align-items-center justify-content-center text-center gap-2"
+                      style={{
+                        fontSize: '0.9rem',
+                        borderRadius: '8px',
+                        backgroundColor: '#ff8c00',
+                        color: '#fff',
+                        whiteSpace: 'nowrap',  // Prevents text wrapping
+                        padding: '8px 10px',  
+                      }}
+                    >
+                      Buy 
                     </a>
                     <button
-                      className="btn btn-secondary w-50 d-flex align-items-center justify-content-center"
-                      onClick={() => handleShareClick(product.darazLink)}
+                      className="btn btn-secondary w-50 d-flex align-items-center justify-content-center text-center gap-2"
+                      style={{
+                        fontSize: '0.9rem',
+                        borderRadius: '8px',
+                        backgroundColor: '#333',
+                        color: '#fff',
+                        whiteSpace: 'nowrap',  // Prevents text wrapping
+                        padding: '8px 10px',  
+                      }}
+                      onClick={() => handleShareClick(product.shareLink)}
                     >
-                      <FaShareAlt className="mr-2" />
                       Share
                     </button>
                   </div>
@@ -193,7 +211,6 @@ const Home = () => {
           ))}
         </div>
       </div>
-
       {/* Share Modal */}
       {showShareModal && (
         <div className="modal-overlay">
