@@ -1,0 +1,157 @@
+/* src/styles/Home.css */
+
+/* Centering the content vertically and horizontally */
+.home-container {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa; /* Light background color */
+  }
+  
+  .home-content {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+.product-grid::-webkit-scrollbar {
+  display: none;
+}
+
+  /* Home.css */
+
+/* Ensure the home-container takes full height */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Header Section Styles */
+.header-section {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Banner Section Styles */
+.banner-section {
+  margin-bottom: 20px;
+}
+
+.banner-item {
+  margin-bottom: 15px;
+}
+
+.banner-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Scrollable Product Grid */
+.product-grid {
+  max-height: 500px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+/* Hide the scrollbar in Webkit browsers (Chrome, Safari, Edge) */
+.product-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  background-color: #f4f4f9;
+  border-radius: 8px;
+}
+
+.card-img-top {
+  height: 100px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-body {
+  padding: 25px;
+}
+
+.card-title {
+  font-size: 1rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+}
+
+.card-text.bold {
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100px;
+  padding: 25px;
+  
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(227, 224, 224, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: rgb(193, 120, 120);
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 300px;
+  text-align: center;
+}

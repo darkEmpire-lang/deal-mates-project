@@ -1,0 +1,61 @@
+/* src/styles/Header.css */
+
+/* Full width navbar */
+.w-100 {
+    width: 100%;
+  }
+  
+  /* Styling for Logo */
+  .logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #f8f9fa; /* Light color for the logo */
+  }
+  
+  .logo:hover {
+    color: #ffc107; /* Gold color on hover */
+    text-decoration: none;
+  }
+  
+  /* Navbar Links */
+  .nav-link {
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #ffc107; /* Gold color on hover */
+  }
+  
+  /* Shop Button */
+  .shop-button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .shop-button:hover {
+    background-color: #ffc107; /* Gold background on hover */
+    border-color: #ffc107; /* Matching border color */
+    color: #333;
+  }
+  
+  /* Additional Styling for mobile responsiveness */
+  @media (max-width: 992px) {
+    .navbar-nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+  /* src/styles/Header.css */
+.nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+}
