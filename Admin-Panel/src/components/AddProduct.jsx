@@ -197,6 +197,8 @@ export default function AddProduct() {
         <option value="Speakers">Speakers</option>
         <option value="Camera Accessories">Camera Accessories</option>
         <option value="TVs">TVs</option>
+        <option value="Shoes">Shoes</option>
+        <option value="Tshirts">Tshirts</option> 
         <option value="Home Appliances">Home Appliances</option>
     </select>
     {categoryError && (

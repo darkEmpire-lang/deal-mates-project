@@ -21,7 +21,7 @@ const AllProducts = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      try {
+      try { 
         const response = await fetch('https://deal-mates-project-backend.vercel.app/products');
         const data = await response.json();
         setProducts(data);
